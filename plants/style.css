@@ -65,6 +65,12 @@ body {
   margin: 0 auto;
 }
 
+@media screen and (max-width: 768px){
+  .wrapper {
+    max-width: 668px;
+  }
+}
+
 .header__wrapper {
   max-width: 1220px;            /*ошибка дизайнера?*/
   margin: 0 auto;
