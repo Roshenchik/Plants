@@ -69,6 +69,11 @@ body {
     max-width: 668px;
   }
 }
+@media screen and (max-width: 380px){
+  .wrapper {
+    max-width: 330px;
+  }
+}
 
 .header__wrapper {
   max-width: 1220px;            /*ошибка дизайнера?*/
@@ -116,6 +121,11 @@ body {
   list-style: none;
   justify-self: flex-end;
   align-items: center;
+}
+@media screen and (max-width: 380px){
+  .header__nav {
+    display: none;
+  }
 }
 
 .header__item {
@@ -192,6 +202,11 @@ body {
     width: 280px;
   }
 }
+@media screen and (max-width: 380px){
+  .welcome__pic {
+    display: none;
+  }
+}
 
 .welcome__intro {
   max-width: 549px;
@@ -226,6 +241,16 @@ body {
     text-align: left;    
   }
 }
+@media screen and (max-width: 380px){
+  .welcome__title {
+    font-family: 'Inter', sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 35px;
+    text-align: left;
+  }
+}
+
 
 .accent{
   color: #499A18;
@@ -270,6 +295,19 @@ body {
 
   cursor: pointer;
   transition: 0.2s;
+}
+@media screen and (max-width: 380px){
+  .welcome__btn {
+    height: 34.137px;
+    width: 100px;
+
+    font-family: 'Inter';
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: center;
+  }
 }
 
 .welcome__btn:hover{
@@ -346,6 +384,11 @@ body {
     text-align: center;    
   }
 }
+@media screen and (max-width: 380px){
+  .about__title {
+    font-size: 25px;
+  }
+}
 
 .about__sub-title {
   margin: 0;
@@ -364,6 +407,11 @@ body {
     text-align: left;    
   }
 }
+@media screen and (max-width: 380px){
+  .about__sub-title {
+    font-size: 15px;
+  }
+}
 
 .about__pic {
   width: 464px;
@@ -373,6 +421,12 @@ body {
   .about__pic {
     height: 258px;
     width: 250px;  
+  }
+}
+@media screen and (max-width: 380px){
+  .about__pic {
+    height: 147px;
+    width: 150px;
   }
 }
 
@@ -434,6 +488,12 @@ body {
     text-align: left;
   }
 }
+@media screen and (max-width: 380px){
+  .service__title {
+    max-width: 187px;
+    font-size: 25px;
+  }
+}
 
 .service__nav {
   align-self: flex-end;
@@ -464,9 +524,31 @@ body {
   cursor: pointer;
   transition: 0.2s;
 }
+@media screen and (max-width: 380px){
+  .service__btn {
+    margin-right: 10px;
+    margin-bottom: 9px;
+    padding: 0;
+    min-width: 0;
+    height: 35px;
+    width: 121px;
+    
+    font-family: 'Inika';
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: center;
+  }
+}
 
 .service__btn:last-child{
   margin-right: 0;
+}
+@media screen and (max-width: 380px){
+  .service__btn:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .service__btn:hover {
@@ -499,8 +581,6 @@ body {
   align-items: center;
   border: 1px solid #E3E1D5;
   border-radius: 20px 20px 20px 20px;
-
-  margin-bottom: 39px;
 }
 @media screen and (max-width: 768px){
   .service__item {
@@ -604,10 +684,26 @@ body {
     text-align: center;
   }
 }
+@media screen and (max-width: 380px){
+  .prices__title {
+    padding-left: 0;
+    font-size: 25px;
+    align-self: center;
+  }
+}
 
 .prices__content {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+}
+@media screen and (max-width: 380px){
+  .prices__content {
+    justify-content: center;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+  }
 }
 
 .prices__rates {
@@ -615,6 +711,12 @@ body {
   flex-direction: column;
   justify-content: space-between;
   min-height: 391px;
+  align-items: center;
+}
+@media screen and (max-width: 380px){
+  .prices__rates {
+
+  }
 }
 
 .prices__accordion {
@@ -625,6 +727,12 @@ body {
   padding: 34px 40px;
   border: 1px solid #E3E1D5;
   border-radius: 20px;
+}
+@media screen and (max-width: 380px){
+  .prices__accordion {
+    padding: 29px 22px;
+    max-width: 224px;
+  }
 }
 
 .prices__accordion-container {
@@ -643,6 +751,12 @@ body {
   cursor: pointer;
   transition: 1s;
 }
+@media screen and (max-width: 380px){
+  .prices__accordion-container {
+    min-width: 0;
+    max-width: 180px;
+  }
+}
 
 .prices__accordion-container:last-of-type {
   margin-bottom: 0;
@@ -656,6 +770,16 @@ body {
   font-weight: 700;
   line-height: 20px;
   text-align: left;
+}
+@media screen and (max-width: 380px){
+  .prices__accordion-title {
+    font-family: 'Inter';
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
 }
 
  .prices__accordion-arrow {
@@ -711,6 +835,12 @@ body {
     margin-bottom: 34px;
   }
 }
+@media screen and (max-width: 380px){
+  .prices__call-us {
+    height: 126px;
+    width: 230px; 
+  }
+}
 
 .prices__sub-title {
   margin: 0;
@@ -728,7 +858,7 @@ body {
     font-size: 25px;
     font-weight: 700;
     line-height: 35px;
-    text-align: right;
+    text-align: center;
   }
 }
 
@@ -769,6 +899,11 @@ color: #FFFFFF;
   place-self: flex-end;
   align-self: flex-end;
 }
+@media screen and (max-width: 380px){
+  .prices__pic {
+    display: none;
+  }
+}
 
 /* prices section end */
 
@@ -801,12 +936,13 @@ color: #FFFFFF;
   height: 497px;
   width: 400px;
   position: relative;
-  left: 10px;                              /*correction*/
+
 }
 @media screen and (max-width: 768px){
   .contacts__pic {
     height: 248.49293518066406px;
     width: 200px;
+    left: 10px;                              /*correction*/
   }
 }
 
