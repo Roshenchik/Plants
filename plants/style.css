@@ -90,9 +90,6 @@ body {
   .header__wrapper {
     padding-top: 33px;
     padding-bottom: 29px;
-
-    padding-top: 24px;
-    padding-bottom: 2px;
   }
 }
 @media screen and (max-width: 380px){
@@ -639,12 +636,12 @@ body {
 }
 @media screen and (max-width: 768px){
   .service__item {
-    margin-bottom: 39px;
+    margin-bottom: 37px;
   }
 }
 @media screen and (max-width: 380px){
   .service__item {
-    margin-bottom: 35px;
+    margin-bottom: 33px;
   }
 }
 
@@ -652,24 +649,32 @@ body {
   position: relative;
   margin: -1px;
   width: 329px;
-  height: 350px;
+  height: 349px;
   margin-bottom: 10px;
   border-radius: 20px 20px 0px 0px;
-  border: 2px solid black;
+}
+@media screen and (max-width: 768px){
+  .picture__box {
+    height: 350px;
+    width: 280px;
+  }
+}
+@media screen and (max-width: 380px){
+  .picture__box {
+
+  }
 }
 
 .service__pic {
   position: absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%);
+
   /* margin: -1px;
   width: 329px;
   height: 350px;
-  margin-bottom: 10px;
-  border-radius: 20px 20px 0px 0px; */
-  width: 330px;
-  height: 450px;
+  margin-bottom: 10px;*/
+  border-radius: 20px 20px 0px 0px; 
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 @media screen and (max-width: 768px){
@@ -681,7 +686,7 @@ body {
 
 .service__name {
   margin: 0;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
   font-family: 'Inter', sans-serif;
   color: #E06733;
   font-size: 20px;
@@ -724,7 +729,7 @@ body {
 }
 
 .prices__wrapper {
-  padding-top: 40px;
+  padding-top: 38px;
   padding-bottom: 8px;
   display: flex;
   flex-wrap: wrap;
@@ -734,8 +739,6 @@ body {
 @media screen and (max-width: 768px){
   .prices__wrapper {
     padding-bottom: 54px;
-
-    padding-top: 20px;
   }
 }
 @media screen and (max-width: 380px){
@@ -929,7 +932,8 @@ body {
 }
 @media screen and (max-width: 768px){
   .prices__call-us {
-    height: 148px;
+    max-width: 296px;
+    height: 150px;
     margin-bottom: 34px;
   }
 }
@@ -952,17 +956,20 @@ body {
 }
 @media screen and (max-width: 768px){
   .prices__sub-title {
+    margin-top: 3px;                                  /*correction*/
     max-width: 296px;
     font-family: 'Inter';
     font-size: 25px;
     font-weight: 700;
     line-height: 35px;
-    text-align: center;
+    text-align: right;
   }
 }
 @media screen and (max-width: 380px){
   .prices__sub-title {
+    margin-top: 0;
     font-size: 20px;
+    text-align: center;
     
   }
 }
