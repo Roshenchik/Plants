@@ -676,6 +676,11 @@ body.lock {
   }
 }
 
+.service__btn.active {
+  background-color: #E06733;
+  color: #FFFFFF;
+}
+
 .service__btn:hover {
   background-color: #E06733;
   color: #FFFFFF;
@@ -710,6 +715,10 @@ body.lock {
   align-items: center;
   border: 1px solid #E3E1D5;
   border-radius: 20px 20px 20px 20px;
+
+  transition: 0.7s ;
+
+
 }
 @media screen and (max-width: 768px){
   .service__item {
@@ -720,6 +729,18 @@ body.lock {
   .service__item {
     margin-bottom: 33px;
   }
+}
+
+.planting.blur {
+  filter: blur(2px);
+}
+
+.gardens.blur {
+  filter: blur(2px);
+}
+
+.lawn.blur {
+  filter: blur(2px);
 }
 
 .picture__box {

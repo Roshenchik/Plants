@@ -1,7 +1,7 @@
 console.log('Plants 1: all tasks have been implemented\nsmall deviations from template, but not more 10px\nscore: 100')
 console.log('Plants 1: all tasks have been implemented\nsmall deviations from template, but not more 10px\nscore: 75')
 
-/*                                               */
+/*                     menu                          */
 
 const headerMenu = document.querySelector('.header__menu');
 const headerList = document.querySelector('.header__list');
@@ -36,5 +36,91 @@ function remove(){
 }
 
 
+/*                     service buttons                          */
 
+const frames = document.querySelectorAll('.service__item')
+const buttons = document.querySelectorAll('.service__btn')
+const gardens = document.querySelector('.gardens')
+const lawn = document.querySelector('.lawn')
+const planting = document.querySelector('.planting')
+const frameArr = Array.from(frames)
+
+buttons.forEach((button, index) => {
+  button.addEventListener('click', () =>{
+
+    if (index == 0){
+      blurElse(gardens)
+    }
+    if (index == 1){
+      blurElse(lawn)
+    }
+    if (index == 2){
+      blurElse(planting)
+    }
+
+    button.classList.toggle('active')
+
+    if (buttons[0].classList.contains('active') && buttons[1].classList.contains('active') && buttons[2].classList.contains('active')) {
+      button.classList.toggle('active')
+      if (index == 0){
+        blurElse(gardens)
+      }
+      if (index == 1){
+        blurElse(lawn)
+      }
+      if (index == 2){
+        blurElse(planting)
+      }
+    }
+
+    if (!buttons[0].classList.contains('active') && !buttons[1].classList.contains('active') && !buttons[2].classList.contains('active')) {
+      unblurAll()
+    }
+
+
+  })
+
+})
+
+function unblurAll() {
+  frames.forEach(frame => {
+    frame.classList.remove('blur')
+  })
+}
+
+function blurAll() {
+  frames.forEach(frame => {
+    frame.classList.add('blur')
+  })
+}
+
+function blurElse (category) {
+  const catName = category.classList[1]
+  frames.forEach(frame => {
+
+    // if (buttons[0].classList.contains('active') && buttons[1].classList.contains('active') && buttons[2].classList.contains('active')) {
+    //   button.classList.toggle('active')
+    // }
+
+    if (buttons[0].classList.contains('active') || buttons[1].classList.contains('active') || buttons[2].classList.contains('active')) {
+      if ((frame.matches('.' + catName))) {
+        frame.classList.toggle('blur')
+      }
+    }
+    else if ((!frame.matches('.' + catName))) {
+      frame.classList.add('blur')
+    }
+  })
+}
+
+/*headerMenu.addEventListener('click', (e) => {
+  e.stopPropagation();
+  document.body.classList.toggle('lock')
+	headerList.classList.toggle('active');
+	headerMenu.classList.toggle('active');
+
+  headerLink.forEach(headerLink => {
+  headerLink.addEventListener('click', remove);
+})
+})classList.toggle('blur')*/
 
