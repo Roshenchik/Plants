@@ -76,10 +76,7 @@ buttons.forEach((button, index) => {
     if (!buttons[0].classList.contains('active') && !buttons[1].classList.contains('active') && !buttons[2].classList.contains('active')) {
       unblurAll()
     }
-
-
   })
-
 })
 
 function unblurAll() {
@@ -97,11 +94,6 @@ function blurAll() {
 function blurElse (category) {
   const catName = category.classList[1]
   frames.forEach(frame => {
-
-    // if (buttons[0].classList.contains('active') && buttons[1].classList.contains('active') && buttons[2].classList.contains('active')) {
-    //   button.classList.toggle('active')
-    // }
-
     if (buttons[0].classList.contains('active') || buttons[1].classList.contains('active') || buttons[2].classList.contains('active')) {
       if ((frame.matches('.' + catName))) {
         frame.classList.toggle('blur')
@@ -113,14 +105,43 @@ function blurElse (category) {
   })
 }
 
-/*headerMenu.addEventListener('click', (e) => {
-  e.stopPropagation();
-  document.body.classList.toggle('lock')
-	headerList.classList.toggle('active');
-	headerMenu.classList.toggle('active');
 
-  headerLink.forEach(headerLink => {
-  headerLink.addEventListener('click', remove);
+
+
+
+
+/*                         Prices accordion                          */
+
+const container = document.querySelectorAll('.prices__accordion-container');
+const opened = document.querySelectorAll('.prices__opened');
+const closed = document.querySelectorAll('.prices__closed');
+const arrow = document.querySelectorAll('.prices__accordion-arrow');
+
+closed.forEach((cls, index) => {
+  cls.addEventListener('click', () => {
+    
+    Array.from(opened).some((el, i) => {
+      if (el.classList.contains('on') && el !== opened[index]){
+        el.classList.remove('on');
+      }
+    }) 
+
+    /*                                  refactor maybe                           */
+
+    Array.from(arrow).some((arr, i) => {
+      if (arr.classList.contains('rotated') && arr !== arrow[index]){
+        arr.classList.remove('rotated')
+      }
+    }) 
+
+    opened[index].classList.toggle('on')
+    arrow[index].classList.toggle('rotated')
+    console.log(Array.from(opened).some((el) => el.classList.contains('on')))
+  })
+
+  if (opened[index].classList.contains('on')) {
+    arrow[index].classList.toggle('rotated')
+  }
 })
-})classList.toggle('blur')*/
+
 
