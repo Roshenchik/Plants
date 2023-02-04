@@ -123,25 +123,73 @@ closed.forEach((cls, index) => {
     Array.from(opened).some((el, i) => {
       if (el.classList.contains('on') && el !== opened[index]){
         el.classList.remove('on');
-      }
-    }) 
-
-    /*                                  refactor maybe                           */
-
-    Array.from(arrow).some((arr, i) => {
-      if (arr.classList.contains('rotated') && arr !== arrow[index]){
-        arr.classList.remove('rotated')
+        arrow[i].classList.remove('rotated')
+        container[i].classList.remove('opened')
       }
     }) 
 
     opened[index].classList.toggle('on')
     arrow[index].classList.toggle('rotated')
-    console.log(Array.from(opened).some((el) => el.classList.contains('on')))
+    container[index].classList.toggle('opened')
   })
+})
 
-  if (opened[index].classList.contains('on')) {
-    arrow[index].classList.toggle('rotated')
+
+
+
+/*                            spoiler with contacts                                 */
+
+const contactsSelect = document.querySelector('.contacts__select');
+const contactsSelectBtn = document.querySelector('.contacts__select-btn');
+const contactsItems = document.querySelector('.contacts__select-items');
+const contactsItem = document.querySelectorAll('.contacts__item');
+const contactsAdress = document.querySelector('.contacts__adress');
+const contactsTitle = document.querySelector('.contacts__select-title');
+const city = document.querySelectorAll('.city-location');
+const phoneNumber = document.querySelectorAll('.phone-number');
+const officeArdess = document.querySelectorAll('.office-adress');
+const contactsArrow = document.querySelector('.contacts__select-arrow');
+const contactsPic = document.querySelector('.contacts__pic');
+const callUsBtn = document.querySelector('.adress__btn');
+let itemClick = 'not clicked'
+
+
+contactsSelectBtn.addEventListener('click', () => {
+  contactsItems.classList.toggle('active');
+  contactsArrow.classList.toggle('active')
+
+  if (itemClick == 'not clicked') {
+    contactsSelectBtn.classList.toggle('active');
   }
 })
 
+contactsItem.forEach((item, index) => {
+  item.addEventListener('click', () => {
+    itemClick = 'clicked'
+    contactsItems.classList.remove('active');
+    contactsArrow.classList.remove('active')
+
+    addDisplayNone(city);
+    addDisplayNone(phoneNumber);
+    addDisplayNone(officeArdess);
+
+    city[index].style.display = 'block';
+    phoneNumber[index].style.display = 'block';
+    officeArdess[index].style.display = 'block';
+
+    contactsAdress.classList.add('active');
+    contactsTitle.innerHTML = item.innerHTML;
+    contactsTitle.style.fontSize = '16px';
+
+    callUsBtn.setAttribute('href', ('tel:' + phoneNumber[index].innerHTML))
+
+    contactsPic.classList.add('remove');
+
+    function addDisplayNone(elements) {
+      elements.forEach(el => {
+        el.style.display = 'none'
+      })
+    }
+  })
+})
 
